@@ -1,18 +1,22 @@
 package com.richards.pocketBank.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
 import java.util.Date;
 
 @Entity
 @Table(name = "cards")
+@Setter
+@Getter
 public class Cards {
 
 
         @Id
         @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
-        @GenericGenerator(name = "native",strategy = "native")
+        @GenericGenerator(name = "native")
         @Column(name = "card_id")
         private int cardId;
 
